@@ -5,6 +5,8 @@ export const Container = styled.TouchableOpacity`
   min-height: 56px;
   max-height: 56px;
   border-radius: 6px;
+  margin: 10px;
+  flex-direction: row;
 
   align-items: center;
   justify-content: center;
@@ -16,6 +18,7 @@ export const Title = styled.Text`
   color: ${({ theme }) => theme.COLORS.WHITE};
   font-size: ${({ theme }) => theme.FONT_SIZE.MD}px;
   font-family: ${({ theme }) => theme.FONT_FAMILY.BOLD};
+  margin: 0 5px;
 `;
 
 export const Loading = styled.ActivityIndicator.attrs(({ theme }) => ({
