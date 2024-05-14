@@ -11,11 +11,9 @@ type Props = {
 }
 
 export function Input({ label, multiline, numberOfLines, height = 56}: Props) {
-  const insets = useSafeAreaInsets();
 
-  const paddingBottom = insets.bottom;
   return (
-    <Container style={{paddingBottom}}>
+    <Container>
         <Label>{label}</Label>
         <InputText 
           style={{height: height}} 

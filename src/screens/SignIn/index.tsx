@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Container, Title, Description } from './styles';
+import { Container, Title, Description, FormView } from './styles';
 
 import { Button } from '../../components/Button';
 
@@ -24,7 +24,9 @@ export function SignInCP() {
       <Description>
         A notação da sua tarefas
       </Description>
-      <Input label='Seu nome' />
+      <FormView>
+        <Input label='Seu nome' />
+      </FormView>
       <Button 
         title='Acessar' 
         onPress={handleSignIn} 

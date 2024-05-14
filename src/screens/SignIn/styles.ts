@@ -22,3 +22,8 @@ export const Description = styled.Text`
 
   margin-bottom: 56px;
 `; 
+
+export const FormView = styled.View`
+  margin: 40px 0px;
+  background-color: ${({ theme }) => theme.COLORS.GRAY_800};
+`;
