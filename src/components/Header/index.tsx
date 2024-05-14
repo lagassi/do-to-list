@@ -1,13 +1,19 @@
 import { TouchableOpacity } from 'react-native'
-import { Power } from 'phosphor-react-native'
+import { SignOut, ArrowSquareLeft } from 'phosphor-react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { Container, Greeting, Message, Name, ButtonLogout, TextButton } from './styles';
+import { Container, Greeting, Message, Name, Button, TextButton } from './styles';
 
 import theme from '../../theme';
+import { useNavigation } from '@react-navigation/native';
 
-export function Header() {
+type Props = {
+  isBtnGoBack?: boolean;
+}
+
+export function Header({ isBtnGoBack = false }: Props) {
   const insets = useSafeAreaInsets();
+  const { goBack } = useNavigation();
 
   const paddingTop = insets.top + 32;
 
@@ -17,6 +23,11 @@ export function Header() {
 
   return (
     <Container style={{ paddingTop }}>
+      {isBtnGoBack && (
+        <Button activeOpacity={0.7} onPress={() => goBack()}>
+          <ArrowSquareLeft size={40} color={theme.COLORS.BRAND_LIGHT} />
+        </Button>
+      )}
       <Greeting>
         <Message>
           Olá
@@ -27,12 +38,12 @@ export function Header() {
         </Name>
       </Greeting>
 
-      <ButtonLogout activeOpacity={0.7} onPress={handleLogOut}>
+      <Button activeOpacity={0.7} onPress={handleLogOut}>
         <TextButton>
           Sair
         </TextButton>
-        <Power size={25} color={theme.COLORS.BRAND_LIGHT} />
-      </ButtonLogout>
+        <SignOut size={25} color={theme.COLORS.BRAND_LIGHT} />
+      </Button>
     </Container>
   );
 }

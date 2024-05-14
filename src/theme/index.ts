@@ -4,6 +4,8 @@ export default {
 
     RED: '#FF4D4D',
 
+    BLUE: '#147fff',
+
     BRAND_LIGHT: '#00B37E',
     BRAND_MID: '#00875F',
 

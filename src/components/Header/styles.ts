@@ -26,7 +26,7 @@ export const Name = styled.Text`
   font-family: ${({ theme }) => theme.FONT_FAMILY.BOLD};
 `;
 
-export const ButtonLogout = styled.TouchableOpacity`
+export const Button = styled.TouchableOpacity`
   margin-right: 12px;
   flex-direction: row;
   align-items: center;
