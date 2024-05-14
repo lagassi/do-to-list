@@ -13,12 +13,12 @@ type Props = {
 
 export function Header({ isBtnGoBack = false }: Props) {
   const insets = useSafeAreaInsets();
-  const { goBack } = useNavigation();
+  const { goBack, navigate } = useNavigation();
 
   const paddingTop = insets.top + 32;
 
   function handleLogOut() {
-   
+    navigate('signIn')
   }
 
   return (

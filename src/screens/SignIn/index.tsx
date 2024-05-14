@@ -1,29 +1,35 @@
 import { useEffect, useState } from 'react';
-import { Container, Title, Slogan } from './styles';
+import { Container, Title, Description } from './styles';
 
 import { Button } from '../../components/Button';
 
+import { SignIn } from 'phosphor-react-native';
+
 import { Alert } from 'react-native';
 import React from 'react';
+import { Input } from '../../components/Input';
+import { useNavigation } from '@react-navigation/native';
 
-export function SignIn() {
+export function SignInCP() {
+  const { navigate } = useNavigation();
+
   const [isAutenticating, setIsAuthenticanting] = useState(false)
   async function handleSignIn() {
-
+    navigate('home')
   }
   
   return (
     <Container>
-      <Title>Ignite Fleet</Title>
-
-      <Slogan>
-        Gestão de uso de veículos
-      </Slogan>
-
+      <Title>TO-DO LIST</Title>
+      <Description>
+        A notação da sua tarefas
+      </Description>
+      <Input label='Seu nome' />
       <Button 
-        title='Entrar com Google' 
+        title='Acessar' 
         onPress={handleSignIn} 
-        isLoading={isAutenticating} 
+        isLoading={isAutenticating}
+        Icon={SignIn}
       />
     </Container>
   );
