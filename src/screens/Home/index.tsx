@@ -42,6 +42,7 @@ export function Home() {
       <Button
         title='Nova tarefa'
         Icon={Plus}
+        onPress={() => navigate('newTask')}
       />
       <Button 
         title='Historico'
